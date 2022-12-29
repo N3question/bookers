@@ -5,7 +5,8 @@ class BooksController < ApplicationController
   end
 
   def index
-   # いらない？
+   @book = Book.new
+   @books = Book.all
   end
 
   def show
