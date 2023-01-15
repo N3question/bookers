@@ -31,4 +31,10 @@ class BooksController < ApplicationController
   def destroy
   end
   
+private
+#ストロングパラメータ
+ def book_params
+  params.require(:book).permit(:title, :body)
+ end
+  
 end
