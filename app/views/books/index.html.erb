@@ -22,22 +22,33 @@
  </table> 
  
  <h2 class="sub-headline">New book</h2> 
+ <!-- バリデーションを行った際のエラー表示 -->
+ <!--< % if @book.errors.any? %>-->
+ <!-- < %= @book.errors.count %>error prohibited this book from being saved:-->
+ <!-- <ul>-->
+ <!--  < % @book.errors.full_messages.each do |message| %>-->
+ <!--   <li>< %= message %></li>-->
+ <!--  < %end%>-->
+ <!-- </ul>-->
+ <!--< %end%>-->
+  
  <!-- form_with部分 --> 
-  <%= form_with model: Book.new do |f| %>
+ <%= form_with model: Book.new do |f| %>
+ 
   <div class="field">
    <p>Title</p>
    <%= f.text_field :title %>
   </div>
- 
+  
   <div class="field">
    <p>Body</p>
    <%= f.text_area :body %>
   </div>
- 
+  
   <div class="actions">
    <%= f.submit 'Create Book' ,class:"input" %>
   </div>
-   <!--brで改行する。Bodyの下にボタンが来るようにする-->
+ 
  <% end %>
  
   <!-- この次は投稿を保存するためのcreate機能 -->
