@@ -31,10 +31,13 @@ class BooksController < ApplicationController
   def destroy
   end
   
-private
-#ストロングパラメータ
+private # controllerの中でしか呼び出せない
+# 以下ストロングパラメータの定義
  def book_params
   params.require(:book).permit(:title, :body)
+  # formから送られるデータ => paramsの中
+  # 送られてきたデータの中からモデル（:book）を指定。データの絞り込み => require
+  # 絞り込んだデータから保存を許可するカラム（:title :bodyなど）を指定 => permit
  end
   
 end
