@@ -7,6 +7,7 @@
 </p>
 
 <p class="show-edit_back">
- <a href="">Edit</a> | 
- <a href="/books">Back</a>
+ <%= link_to "Edit", edit_book_path(@book.id) %>
+ |
+ <%= link_to "Back", url="/books" %>
 </p>

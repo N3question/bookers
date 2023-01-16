@@ -18,6 +18,7 @@
 <%end%>
 
 <p class="show-edit_back">
- <a href="">Show</a> | 
- <a href="/books">Back</a>
+ <%= link_to "Show", book_path(@book.id) %>
+ |
+ <%= link_to "back", url="/books" %>
 </p>

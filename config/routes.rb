@@ -12,4 +12,6 @@ Rails.application.routes.draw do
  get 'books/:id/edit'=>'books#edit', as:'edit_book'
  patch 'books/:id'=>'books#update', as:'update_book' # 編集したフォームとアクションを紐づけていく作業
   # NEXT updateのためのPATCH（HTTPメゾット）、update_book(名前付きルート)に設定しているので、その記述をフォームに追記
+ delete 'books/:id'=>'books#destroy', as:'destroy_book'
+  # NEXT ルーティングで実装したdestroyアクションの実装をしていく。削除のためのdestroyアクションを追加。
 end
