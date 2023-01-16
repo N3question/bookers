@@ -5,18 +5,20 @@ class BooksController < ApplicationController
   end
   
   def create
-   book  = Book.new(book_params) #データの受け取り、新規登録する [引数：モデル名_params]
-   # 受け取ったデータをビューファイルに受け渡す必要がないので「＠」はつかない[ローカル変数]
+   # 手順①
+   # book  = Book.new(book_params) #データの受け取り、新規登録する [引数：モデル名_params]
+   # # 受け取ったデータをビューファイルに受け渡す必要がないので「＠」はつかない[ローカル変数]
    
-   book.save #データをデータベースに保存する[saveメゾット]
-   redirect_to '/books' #/booksにリダイレクト
+   # book.save #データをデータベースに保存する[saveメゾット]
+   # redirect_to '/books' #/booksにリダイレクト
    
-    # @book = Book.new(books_path)
-    # if @book.save
-    # redirect_to '/books'
-    # else
-    #   render :index
-    # end
+   # 手順② バリデーションの結果をコントローラで検出
+    @book = Book.new(book_params)
+    if @book.save
+     redirect_to '/books'
+    else
+     render :new
+    end
   end
 
   def index
