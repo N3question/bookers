@@ -24,7 +24,10 @@ class BooksController < ApplicationController
   end
 
   def show
-   @book = Book.find(params[:id]) #一件だけ取得するのでインスタンス変数は＠book
+   @book = Book.find(params[:id]) 
+    # 一件だけ取得するのでインスタンス変数は単数形の＠book
+    # [findメゾット]は引数を受け取り、例えばidカラムを引数と比べてレコードを取得する
+    # (例) Book.find(1) booksテーブルの中にあるidが1のレコードを取得
   end
 
   def edit
