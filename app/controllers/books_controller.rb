@@ -5,7 +5,9 @@ class BooksController < ApplicationController
   end
   
   def create
-   book  = Book.new(book_params) #データの受け取り、新規登録する[インスタンス変数]
+   book  = Book.new(book_params) #データの受け取り、新規登録する [引数：モデル名_params]
+   # 受け取ったデータをビューファイルに受け渡す必要がないので「＠」はつかない[ローカル変数]
+   
    book.save #データをデータベースに保存する[saveメゾット]
    redirect_to '/books' #/booksにリダイレクト
    
