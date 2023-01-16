@@ -14,7 +14,7 @@
   　<!-- （変更前）< %= link_to "show", "/books/#{book.id}"%> -->
   　<!-- idがどんな値なのかを指定しないといけないためbooksには引数を指定。指定する値はレコードのidカラム -->
   　<!-- 以下（変更後） -->
-    <td><%= link_to "show", book_path(book.id)%></td> <!-- NEXT  -->
+    <td><%= link_to "show", book_path(book.id)%></td>
     <td><%= link_to "edit"%></td> 
     <td><%= link_to "destroy", method: :delete, "data-confirm" => "Are you sure?" %></td> 
  
