@@ -30,7 +30,10 @@ class BooksController < ApplicationController
     # (例) Book.find(1) booksテーブルの中にあるidが1のレコードを取得
   end
 
-  def edit
+  def edit #編集機能のためのアクション
+   @book = Book.find(params[:id]) 
+    # [findメゾット]今回は投稿済みのデータを編集する。保存されているデータが必要なのでfindメゾットを使う。
+    # NEXT editアクションに対するViewを開き、フォームを表示するための記述を行う。
   end
   
   def destroy
