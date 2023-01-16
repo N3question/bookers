@@ -2,18 +2,22 @@
 
 <%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
                           <!-- ここの部分：updateのための記述の追記 　　-->
-
+<div class="field">
  <p>Title</p>
  <%= f.text_field :title %>
- 
+</div>
+
+<div class="field">
  <p>Body</p>
  <%= f.text_area :body %></br>
- 
- <%= f.submit 'Update Book' %>
- 
+</div>
+
+<div class="actions">
+ <%= f.submit 'Update Book' ,class:"input" %>
+</div> 
 <%end%>
 
 <p class="show-edit_back">
- <a href="books/:id">Show</a> | 
+ <a href="">Show</a> | 
  <a href="/books">Back</a>
 </p>
