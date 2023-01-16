@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   end
 
   def edit #編集機能のためのアクション
-   @book = Book. find(params[:id]) 
+   @book = Book.find(params[:id]) 
     # [findメゾット]今回は投稿済みのデータを編集する。保存されているデータが必要なのでfindメゾットを使う。
     # NEXT editアクションに対するViewを開き、フォームを表示するための記述を行う。
     
@@ -40,14 +40,14 @@ class BooksController < ApplicationController
   end
   
   def update
-   book = Book. find(params[:id])
+   book = Book.find(params[:id])
    book.update(book_params)
    redirect_to book_path(book.id)
    
   end
   
   def destroy
-   book = Book. find(params[:id]) # データ（レコード）を１件取得
+   book = Book.find(params[:id]) # データ（レコード）を１件取得
    book.destroy # データ（レコード）を削除
    redirect_to '/books' #index画面に戻る
    # NEXT destroyアクションへのリンクをindex.html.erbに作成する(実際に削除するボタン)
