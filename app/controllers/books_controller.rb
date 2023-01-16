@@ -34,6 +34,9 @@ class BooksController < ApplicationController
    @book = Book.find(params[:id]) 
     # [findメゾット]今回は投稿済みのデータを編集する。保存されているデータが必要なのでfindメゾットを使う。
     # NEXT editアクションに対するViewを開き、フォームを表示するための記述を行う。
+    
+    # redirect_to book_path(@book.id)
+    # 編集後詳細画面へリダイレクト
   end
   
   def destroy
