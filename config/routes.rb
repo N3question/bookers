@@ -5,7 +5,7 @@ Rails.application.routes.draw do
  get 'top'=>'homes#top'
  get 'books/new'
  post 'books'=>'books#create'
- get 'books'=>'books#index'
+ get 'books'=>'books#index' ,as:'index_book'
  get 'books/:id'=>'books#show', as:'book' # 名前付きルート
   # 'books#show'の設定を、bookとして利用できる、という意味になる
   # NEXT indexのlink_toを変更

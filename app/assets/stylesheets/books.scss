@@ -19,6 +19,7 @@ td{
 
 .actions{
  margin: 0 0 10px;
+ line-height: 1;
 }
 
 .input{
@@ -27,10 +28,6 @@ td{
 
 .show-title,.show-body{
  margin: 33px;
-}
-
-.field{
- margin: 0 0 10px;
 }
 
 .errors{
@@ -60,4 +57,8 @@ td{
   list-style-position: inside; /*リストマーカーの位置を指定*/
   padding-left: 50px;
  }
+}
+
+.flash{
+ margin: 33px;
 }

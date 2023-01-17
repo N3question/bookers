@@ -24,11 +24,11 @@ body{
  margin: 33px;
 }
 
-.headline,th,.sub-headline,strong{
+h1,th,h2,strong{
  font-family: 'Orbitron', sans-serif;
 }
 
-.headline{
+h1{
  font-size: 26px;
  margin: 17px 0;
  line-height: 1;
@@ -38,7 +38,7 @@ p.top{
  margin: 33px;
 }
 
-.sub-headline{
+h2{
  font-size: 19.5px;
  margin: 16px 0;
  line-height: 1;
