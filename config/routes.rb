@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # NEXT updateのためのPATCH（HTTPメゾット）、update_book(名前付きルート)に設定しているので、その記述をフォームに追記
  delete 'books/:id'=>'books#destroy', as:'destroy_book'
   # NEXT ルーティングで実装したdestroyアクションの実装をしていく。削除のためのdestroyアクションを追加。
+  
 end
