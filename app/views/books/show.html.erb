@@ -12,8 +12,8 @@
  <strong>Body:</strong> <%= @book.body %>
 </p>
 
-<p class="show-edit_back">
- <%= link_to "Edit", edit_book_path(@book.id) %>
+<div>
+ <%= link_to "Edit", edit_book_path(@book.id) ,class:"a" %>
  |
- <%= link_to "Back", index_book_path(@book.id) %>
-</p>
+ <%= link_to "Back", index_book_path(@book.id) ,class:"a" %>
+</div>
