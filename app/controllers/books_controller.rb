@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def new
    # Viewへ渡すためのインスタンス変数に空のModelオブジェクトを生成する。
-   @book = Book.new
+   # @book = Book.new
   end
   
   def create
@@ -12,17 +12,33 @@ class BooksController < ApplicationController
    # book.save #データをデータベースに保存する[saveメゾット]
    # redirect_to '/books' #/booksにリダイレクト
    
+   
    # 手順② バリデーションの結果をコントローラで検出
-    @book = Book.new(book_params)
-    if @book.save
-     redirect_to '/books'
-    else
-     render :new
-    end
+    # @book = Book.new(book_params)
+    # if @book.save
+    #  redirect_to '/books'
+    # else
+    #  render :index
+    # end
+   
+    
+   # 手順③ 保存した後にフラッシュメッセージを表示
+   @book = Book.new(book_params)
+   if @book.save
+    flash[:notice] = "Book was successfully created."
+    redirect_to book_path(@book.id) #セーブできた時
+   else
+    @books = Book.all # この行を追加 
+    # index.html.erbの<% @books.each do |book| %>に対してのエラー解決
+    # 代入をしていない＠bookインスタンス変数はnilが入る
+    # [原因]代入していないものに対してメゾットを使い呼び出していたこと。
+    render :index
+   end
   end
 
   def index
    @books = Book.all
+   @book = Book.new
   end
 
   def show
