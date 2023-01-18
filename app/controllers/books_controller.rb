@@ -68,7 +68,6 @@ class BooksController < ApplicationController
   end
   
   def destroy
-   @books = Book.all
    @book = Book.find(params[:id]) # データ（レコード）を１件取得
    @book.destroy # データ（レコード）を削除
    # flash[:notice] = "Book was successfully destroyed."
