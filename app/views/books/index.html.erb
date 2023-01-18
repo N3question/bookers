@@ -22,7 +22,7 @@
     
     <td class="a"><%= link_to "edit", edit_book_path(book.id)%></td> 
     <!-- NEXT controllerのredirect_toを編集 -->
-    <td class="a"><%= link_to "destroy",destroy_book_path(book.id), method: :delete,"data-confirm"=>"Are you sure?" %></td> 
+    <td class="a"><%= link_to "Destroy",destroy_book_path(book.id), method: :delete,"data-confirm"=>"Are you sure?" %></td> 
                                               <!--bookに@はつけない-->
    </tr>
   <%end%>
